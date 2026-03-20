@@ -1,0 +1,134 @@
+:root {
+  /* Paleta Modo Claro */
+  --bg-page: #F7F6E5;      /* Crema suave */
+  --bg-card: #ffffff;      /* Blanco puro */
+  --bg-mini: #fcfcf5;      /* Blanco hueso para mini cards */
+  --primary: #36064D;      /* Morado profundo */
+  --secondary: #76D2DB;    /* Cian */
+  --accent: #DA4848;       /* Rojo */
+  --text: #36064D;
+  --border-color: #36064D;
+}
+
+/* Clase para Modo Oscuro */
+.dark {
+  --bg-page: #1a1a1a;      /* Gris casi negro */
+  --bg-card: #2d2d2d;      /* Gris oscuro */
+  --bg-mini: #3d3d3d;      /* Gris un poco más claro */
+  --primary: #76D2DB;      /* El cian ahora es el color principal */
+  --secondary: #36064D;
+  --text: #F7F6E5;
+  --border-color: #76D2DB;
+}
+
+.container {
+  padding: 40px 20px;
+  background-color: var(--bg-page);
+  min-height: 100vh;
+  transition: all 0.3s ease; /* Transición suave al cambiar de modo */
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+.titulo {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  color: var(--primary);
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* TARJETAS PRINCIPALES */
+.card {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 28px;
+  border: 2px solid var(--border-color);
+  /* Sombra más sutil pero definida */
+  box-shadow: 6px 6px 0px var(--border-color);
+  transition: transform 0.2s;
+}
+
+/* MINI CARDS (Proyectos/Certificados) */
+.mini-card {
+  background: var(--bg-mini);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* BOTONES */
+button {
+  background: var(--secondary);
+  color: white;
+  border: 2px solid var(--border-color);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 3px 3px 0px var(--border-color);
+}
+
+button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px var(--border-color);
+}
+
+/* IMAGEN DE PERFIL */
+.img {
+  width: 150px;
+  height: 150px;
+  border-radius: 25%; /* Toque moderno, no tan circular */
+  border: 4px solid var(--primary);
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* AJUSTES DE TEXTO */
+h2 { margin-bottom: 20px; font-size: 1.5rem; }
+p { line-height: 1.6; margin-bottom: 10px; }
+
+/* SKILLS BADGES (Para que no sea solo texto plano) */
+.skills-list {
+  list-style: none; /* Quitamos los puntos negros por defecto */
+  padding: 0;
+  margin-top: 15px;
+}
+
+.skills-list li {
+  background: var(--bg-mini);
+  margin-bottom: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border-left: 5px solid var(--secondary); /* El color cian de tu paleta */
+  color: var(--text);
+  font-weight: 500;
+  transition: transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skills-list li:hover {
+  transform: translateX(10px); /* Efecto de desplazamiento al pasar el mouse */
+  background: var(--bg-card);
+}
+
+.bullet {
+  color: var(--primary); /* El morado de tu paleta */
+  font-weight: bold;
+}
